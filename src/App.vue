@@ -1,8 +1,7 @@
 <template>
   <div class="container" id="app">
     <navbar></navbar>
-    <login></login>
-     <register></register>
+    <router-view></router-view>
   </div>
 </template>
 
