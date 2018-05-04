@@ -31,7 +31,8 @@
 		data () {
 			return {
 				email: '',
-				password: ''
+				password: '',
+        body: {},
 			}
 		},
     methods:{
@@ -46,10 +47,9 @@
         };
 		      this.$http.post("http://localhost/oauth/token", data)
             .then(resp => {
-              console.log(resp);
               this.$auth.setToken(resp.body.access_token, resp.body.expires_in + Date.now());
-              this.email = '';
-              this.password = '';
+              this.$router.push("/about");
+
             }, resp => {
               this.email = '';
               this.password = '';
